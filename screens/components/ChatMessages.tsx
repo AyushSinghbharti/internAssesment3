@@ -1,29 +1,42 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-} from "react-native";
+import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 
 export default function ChatMessages() {
   return (
-    <View style={{ flex: 1}}>
+    <View style={{ flex: 1 }}>
       <ScrollView
         style={styles.messagesContainer}
         contentContainerStyle={styles.messagesContent}
-        // inverted
       >
+        {/* Time */}
+        <View style={styles.timeBox}>
+          <View style={styles.timeLine} />
+          <Text style={styles.time}>12 Jan, 2024</Text>
+          <View style={styles.timeLine} />
+        </View>
+
         {/* Received Message */}
-        <View style={styles.receivedMessage}>
-          <Text style={styles.messageText}>
-            Connect with fellow travelers, share the ride and save money.
-          </Text>
+        <View style={{ flexDirection: "row", gap: 8 }}>
+          <View style={styles.picView}>
+            <Image
+              style={styles.profilePic}
+              source={{ uri: "https://picsum.photos/id/237/250" }}
+            />
+            <Image
+              style={styles.verificationSign}
+              source={require("../../assets/verificationPic.png")}
+            />
+          </View>
+          <View style={styles.receivedMessage}>
+            <Text style={styles.messageTextSent}>
+              Connect with fellow travelers, share the ride and save money.
+            </Text>
+          </View>
         </View>
 
         {/* Sent Message */}
         <View style={styles.sentMessage}>
-          <Text style={styles.messageText}>
+          <Text style={styles.messageTextRec}>
             Connect with fellow travelers, share the ride and save money.
           </Text>
         </View>
@@ -41,10 +54,32 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     padding: 16,
   },
+  timeBox: {
+    marginBottom: 16,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  timeLine: {
+    flex: 1,
+    borderBottomWidth: 1,
+    borderColor: "#B7B7B7",
+  },
+  time: {
+    marginHorizontal: 10,
+    color: "#B7B7B7",
+    fontWeight: "bold",
+  },
   receivedMessage: {
     alignSelf: "flex-start",
-    backgroundColor: "green",
+    backgroundColor: "#FFFFFF",
+    elevation: 1,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
     borderRadius: 8,
+    borderTopStartRadius: 0,
     padding: 12,
     marginBottom: 8,
     maxWidth: "75%",
@@ -53,11 +88,30 @@ const styles = StyleSheet.create({
     alignSelf: "flex-end",
     backgroundColor: "#007bff",
     borderRadius: 8,
+    borderBottomRightRadius: 0,
     padding: 12,
     marginBottom: 8,
     maxWidth: "75%",
   },
-  messageText: {
+  messageTextSent: {
+    color: "#606060",
+  },
+  messageTextRec: {
     color: "#fff",
+  },
+  picView: {
+    height: 30, width: 30,
+  },
+  profilePic: {
+    height: 30,
+    width: 30,
+    borderRadius: 50,
+  },
+  verificationSign: {
+    height: 12,
+    width: 12,
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
   },
 });
