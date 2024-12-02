@@ -25,7 +25,7 @@ export default function CustomTextInput() {
 
   useEffect(() => {
     if (myRef.current) {
-      myRef.current.measure((x, y, width, height, pageX, pageY) => {
+      myRef.current.measure((x:number, y:number, width:number, height:number, pageX:number, pageY:number) => {
         setPosition({ x: pageX, y: y });
         console.log("Measured:", { x, y, pageX, pageY });
       });
