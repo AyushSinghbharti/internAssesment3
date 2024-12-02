@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import {
   View,
   Text,
@@ -8,12 +8,45 @@ import {
   ScrollView,
   StatusBar,
   Image,
+  Modal,
 } from "react-native";
-import { Feather, Ionicons } from "@expo/vector-icons";
+import { Feather, Ionicons, Octicons } from "@expo/vector-icons";
 
 export default function Header() {
+  const [modalVisible, setModalVisible] = useState(false);
+
   return (
     <View style={styles.header}>
+      <Modal
+        animationType="slide"
+        statusBarTranslucent={true}
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <TouchableOpacity
+          style={{ flex: 1 }}
+          onPress={() => setModalVisible(!modalVisible)}
+        >
+          <View style={styles.tabBox}>
+            <View style={styles.tabOptions}>
+              <Octicons name="people" size={20} color="black" />
+              <Text style={styles.tabText}>Members</Text>
+            </View>
+            <View style={styles.tabOptions}>
+            <Feather name="phone" size={24} color="black" />
+              <Text style={styles.tabText}>Share Number</Text>
+            </View>
+            <View style={styles.tabOptions}>
+              <Octicons name="report" size={20} color="black" />
+              <Text style={styles.tabText}>Report</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+      </Modal>
+
       <View style={styles.headerTop}>
         <TouchableOpacity>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -53,7 +86,12 @@ export default function Header() {
           </Text>
         </Text>
         <TouchableOpacity>
-          <Ionicons name="ellipsis-vertical" size={24} color="black" />
+          <Ionicons
+            name="ellipsis-vertical"
+            size={24}
+            color="black"
+            onPress={() => setModalVisible(!modalVisible)}
+          />
         </TouchableOpacity>
       </View>
       <TouchableOpacity></TouchableOpacity>
@@ -114,8 +152,33 @@ const styles = StyleSheet.create({
   },
   locationHeading: {
     fontSize: 18,
-    fontWeight: '800',
+    fontWeight: "800",
     color: "#333",
     lineHeight: 22,
+  },
+  tabBox: {
+    width: 153,
+    marginTop: 25,
+    marginHorizontal: 10,
+    borderRadius: 8,
+    backgroundColor: 'white',
+    elevation: 2,
+    position: 'absolute',
+    top: 120,
+    right: 10,
+  },
+  tabOptions: {
+    gap: 10,
+    height: 44,
+    alignItems: 'center',
+    flexDirection: "row",
+    paddingVertical: 7,
+    paddingHorizontal: 12,
+    borderBottomWidth: 1,
+    borderColor: "#E5E5E0",
+  },
+  tabText: {
+    fontSize: 14,
+    fontWeight: '600',
   },
 });
