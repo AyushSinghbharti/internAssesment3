@@ -1,3 +1,4 @@
+
 # Chat Screen Application  
 
 This project is an assignment for my internship, where the goal is to create a **Chat Screen** using React Native. The application is designed to work on both Android and iOS platforms, providing a clean, responsive, and feature-rich chat interface.
@@ -14,12 +15,15 @@ This project is an assignment for my internship, where the goal is to create a *
 
 ## Look of Project  
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/bd35dd67-4520-47ec-b3ac-5882cd857b76" alt="Project Look Video" width="60%">
+<div align="center">  
+  <video width="300" controls>  
+    <source src="https://github.com/user-attachments/assets/bd35dd67-4520-47ec-b3ac-5882cd857b76" type="video/mp4">  
+    Your browser does not support the video tag.  
+  </video>  
 </div>  
 
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/25ee4edb-d4e6-49a8-a8cd-752eaa3734b4" alt="WhatsApp Image 2024-12-04" width="60%">
+<div align="center">  
+  <img src="https://github.com/user-attachments/assets/25ee4edb-d4e6-49a8-a8cd-752eaa3734b4" alt="WhatsApp Image 2024-12-04" width="300">  
 </div>  
 
 ---
@@ -38,13 +42,15 @@ This project is an assignment for my internship, where the goal is to create a *
 
 ## Project Setup  
 
-### Deployed Project
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/7d450030-4f8a-4547-9d19-ad1c6873fbae" alt="Deploy Linked Image" width="40%">
+### Deployed Project  
+
+<div align="center">  
+  <img src="https://github.com/user-attachments/assets/7d450030-4f8a-4547-9d19-ad1c6873fbae" alt="Deploy Linked Image" width="300">  
 </div>  
 Scan this on EXPO GO, and enjoy.
 
-### Steps to Setup
+### Steps to Setup  
+
 1. **Clone the repository:**  
    ```bash  
    git clone <https://github.com/AyushSinghbharti/internAssesment3/>  
@@ -56,11 +62,11 @@ Scan this on EXPO GO, and enjoy.
    npm install  
    ```  
 
-3. **Run the project:**
-   - For Expo Go:
+3. **Run the project:**  
+   - For Expo Go:  
      ```bash  
      npx expo start  
-     ```
+     ```  
    - For Android:  
      ```bash  
      npx expo start --android  
