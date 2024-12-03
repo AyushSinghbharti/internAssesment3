@@ -9,7 +9,7 @@ import {
 import { LinearGradient } from "expo-linear-gradient";
 import { MotiView } from "moti";
 
-export default function TripChatSkeletonUI() {
+export default function LoaderComponent() {
   const skeletonData = Array(4).fill({});
 
   return (

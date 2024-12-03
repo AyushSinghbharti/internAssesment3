@@ -5,32 +5,41 @@ import ChatMessages from "../components/ChatMessages";
 import CustomTextInput from "../components/CustomTextInput";
 import { DataContext } from "../../DataContext";
 import LoaderComponet from "../components/LoaderComponent";
+import { MotiView } from "moti";
 
 export default function ChatScreen() {
   const context = useContext(DataContext);
-  const [dark, toggle] = useReducer((s) => !s, true);
-  const colorMode = dark ? "dark" : "light";
 
   if (!context) {
     return <Text>Error: Data context is missing!</Text>;
   }
 
-  const data = null;
-
-  const Spacer = ({ height = 16 }) => <View style={{ height }} />;
+  const data = context.data;
 
   return data == null ? (
     <LoaderComponet />
   ) : (
     <View style={styles.container}>
       {/* Header */}
-      <Header dataHead={data} />
+      <MotiView
+        from={{ translateY: -50, opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ type: "timing", duration: 700 }}
+      >
+        <Header dataHead={data} />
+      </MotiView>
 
       {/* Message Section */}
       <ChatMessages chats={data} />
 
       {/* Input Section */}
-      <CustomTextInput />
+      <MotiView
+        from={{ translateY: 50, opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ type: "timing", duration: 700 }}
+      >
+        <CustomTextInput />
+      </MotiView>
     </View>
   );
 }

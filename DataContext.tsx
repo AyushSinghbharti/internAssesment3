@@ -16,7 +16,7 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        await new Promise(resolve => setTimeout(resolve, 5000));
+        // await new Promise(resolve => setTimeout(resolve, 2000));
 
         const response = await fetch('https://qa.corider.in/assignment/chat?page=0');
         const datas = await response.json();
