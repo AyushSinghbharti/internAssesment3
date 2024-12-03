@@ -1,5 +1,5 @@
-import React, { useContext, useReducer } from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import React, { useContext } from "react";
+import { View, Text, StyleSheet } from "react-native";
 import Header from "../components/TopView";
 import ChatMessages from "../components/ChatMessages";
 import CustomTextInput from "../components/CustomTextInput";

@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { Feather, Ionicons } from "@expo/vector-icons";
 export default function FileSelector() {
   return (

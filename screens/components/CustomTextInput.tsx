@@ -5,16 +5,11 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  ScrollView,
   Modal,
-  useWindowDimensions,
 } from "react-native";
 import {
   Feather,
   Ionicons,
-  FontAwesome,
-  MaterialIcons,
-  Entypo,
 } from "@expo/vector-icons";
 import FileSelector from "../modalComponents/FileSelector";
 

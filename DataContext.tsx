@@ -16,16 +16,16 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // try {
-      //   // await new Promise(resolve => setTimeout(resolve, 2000));
+      try {
+        await new Promise(resolve => setTimeout(resolve, 2000));
 
-      //   const response = await fetch('https://qa.corider.in/assignment/chat?page=0');
-      //   const datas = await response.json();
-      //   setData(datas);
-      // } catch (error) {
-      //   console.error('Error fetching data:', error);
-      //   alert(error);
-      // }
+        const response = await fetch('https://qa.corider.in/assignment/chat?page=0');
+        const datas = await response.json();
+        setData(datas);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        alert(error);
+      }
 
       setData(datas);
     };
@@ -35,9 +35,8 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (data && data.chats.length > 0) {
-      // const randomIndex = Math.floor(Math.random() * data.chats.length);
-      // const randomUser = data.chats[randomIndex];
-      const randomUser = data.chats[0];
+      const randomIndex = Math.floor(Math.random() * data.chats.length);
+      const randomUser = data.chats[randomIndex];
       
       setUserId(randomUser.sender.user_id);
     }

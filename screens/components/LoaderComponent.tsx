@@ -3,7 +3,6 @@ import {
   View,
   StyleSheet,
   FlatList,
-  Dimensions,
   ViewStyle,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
