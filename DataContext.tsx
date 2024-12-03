@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import Data from './assets/interface/interface';
+import datas from './assets/data/data.json';
 
 interface DataContextType {
   data: Data | null;
@@ -15,16 +16,18 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        // await new Promise(resolve => setTimeout(resolve, 2000));
+      // try {
+      //   // await new Promise(resolve => setTimeout(resolve, 2000));
 
-        const response = await fetch('https://qa.corider.in/assignment/chat?page=0');
-        const datas = await response.json();
-        setData(datas);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-        alert(error);
-      }
+      //   const response = await fetch('https://qa.corider.in/assignment/chat?page=0');
+      //   const datas = await response.json();
+      //   setData(datas);
+      // } catch (error) {
+      //   console.error('Error fetching data:', error);
+      //   alert(error);
+      // }
+
+      setData(datas);
     };
 
     fetchData();
@@ -32,8 +35,9 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     if (data && data.chats.length > 0) {
-      const randomIndex = Math.floor(Math.random() * data.chats.length);
-      const randomUser = data.chats[randomIndex];
+      // const randomIndex = Math.floor(Math.random() * data.chats.length);
+      // const randomUser = data.chats[randomIndex];
+      const randomUser = data.chats[0];
       
       setUserId(randomUser.sender.user_id);
     }

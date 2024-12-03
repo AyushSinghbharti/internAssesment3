@@ -116,10 +116,9 @@ const styles = StyleSheet.create({
   tripTitle: {
     flex: 1,
     fontSize: 24,
-    fontWeight: "bold",
+    fontFamily: "Mulish-ExtraBold",
     color: "#333",
   },
-
   tripDetails: {
     flexDirection: "row",
     alignItems: "center",
@@ -141,6 +140,7 @@ const styles = StyleSheet.create({
   tripSubtitle: {
     color: "#777",
     flex: 1,
+    fontFamily: "Mulish-Regular",
   },
   locationDetail: {
     fontSize: 16,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
   },
   locationHeading: {
     fontSize: 18,
-    fontWeight: "800",
+    fontFamily: "Mulish-ExtraBold",
     color: "#333",
     lineHeight: 22,
   },
@@ -176,6 +176,7 @@ const styles = StyleSheet.create({
   },
   tabText: {
     fontSize: 14,
+    fontFamily: "Mulish-SemiBold",
     fontWeight: "600",
   },
 });

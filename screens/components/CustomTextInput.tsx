@@ -66,7 +66,7 @@ export default function CustomTextInput() {
 
       <View style={styles.input}>
         <TextInput
-          style={{ flex: 1 }}
+          style={{ flex: 1, fontFamily: "Mulish-Regular" }}
           placeholder="Reply to @Rohit Yadav"
           placeholderTextColor="#aaa"
         />

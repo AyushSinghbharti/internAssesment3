@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   time: {
     marginHorizontal: 10,
     color: "#B7B7B7",
-    fontWeight: "bold",
+    fontFamily: "Mulish-ExtraBold",
   },
   receivedMessage: {
     alignSelf: "flex-start",
@@ -139,8 +139,10 @@ const styles = StyleSheet.create({
   },
   messageTextSent: {
     color: "#606060",
+    fontFamily: "Mulish-Regular",
   },
   messageTextRec: {
+    fontFamily: "Mulish-Regular",
     color: "#fff",
   },
   picView: {
