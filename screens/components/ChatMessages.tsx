@@ -1,22 +1,47 @@
 import React, { useRef, useEffect, useContext } from "react";
-import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+  Image,
+  FlatList,
+} from "react-native";
 import Data, { Chat } from "../../assets/interface/interface";
 import { DataContext } from "../../DataContext";
+import { MotiView } from "moti";
 
-function RenderChat({ chats }: { chats: Chat }) {
+function RenderChat({ chats, index }: { chats: Chat | null; index: number }) {
   const context = useContext(DataContext);
   const userId = context?.userId;
 
   return (
     <>
-      {userId === chats.sender.user_id ? (
-        // Sent Messages
-        <View style={styles.sentMessage}>
+      {chats === null ? (
+        <RenderDate
+          date={`${new Date()
+            .getDate()
+            .toString()
+            .padStart(2, "0")} ${new Date().toLocaleString("default", {
+            month: "short",
+          })}, ${new Date().getFullYear()}`}
+        />
+      ) : userId === chats.sender.user_id ? (
+        <MotiView
+          from={{ translateY: 50, opacity: 0 }}
+          animate={{ translateY: 0, opacity: 1 }}
+          transition={{ type: "timing", duration: index * 250 }}
+          style={styles.sentMessage}
+        >
           <Text style={styles.messageTextRec}>{chats.message}</Text>
-        </View>
+        </MotiView>
       ) : (
-        // Received Message
-        <View style={{ flexDirection: "row", gap: 8 }}>
+        <MotiView
+          from={{ translateY: 50, opacity: 0 }}
+          animate={{ translateY: 0, opacity: 1 }}
+          transition={{ type: "timing", duration: index * 250 }}
+          style={{ flexDirection: "row", gap: 8 }}
+        >
           <View style={styles.picView}>
             <Image
               style={styles.profilePic}
@@ -32,36 +57,34 @@ function RenderChat({ chats }: { chats: Chat }) {
           <View style={styles.receivedMessage}>
             <Text style={styles.messageTextSent}>{chats.message}</Text>
           </View>
-        </View>
+        </MotiView>
       )}
     </>
   );
 }
 
+function RenderDate({ date }: { date: string }) {
+  return (
+    <View style={styles.timeBox}>
+      <View style={styles.timeLine} />
+      <Text style={styles.time}>{date}</Text>
+      <View style={styles.timeLine} />
+    </View>
+  );
+}
+
 export default function ChatMessages({ chats }: { chats: Data }) {
-  const scrollViewRef = useRef<ScrollView>(null);
-
-  useEffect(() => {
-    scrollViewRef.current?.scrollToEnd({ animated: false });
-  }, []);
-
   return (
     <View style={[styles.messagesContainer, { flex: 1 }]}>
-      <ScrollView
-        ref={scrollViewRef}
-        style={styles.messagesContainer}
+      <FlatList
+        data={[...chats.chats, null]}
+        renderItem={({ item, index }) => (
+          <RenderChat chats={item} index={index} />
+        )}
+        keyExtractor={(item) => item?.id || "date"}
+        inverted
         contentContainerStyle={styles.messagesContent}
-        onContentSizeChange={() => scrollViewRef.current?.scrollToEnd({ animated: true })}
-      >
-        <View style={styles.timeBox}>
-          <View style={styles.timeLine} />
-          <Text style={styles.time}>12 Jan, 2024</Text>
-          <View style={styles.timeLine} />
-        </View>
-        {chats.chats.map((chat, index) => (
-          <RenderChat key={index} chats={chat} />
-        ))}
-      </ScrollView>
+      />
     </View>
   );
 }
