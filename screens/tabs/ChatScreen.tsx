@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   View,
   Text,
@@ -11,12 +11,29 @@ import { Ionicons } from "@expo/vector-icons";
 import Header from "../components/TopView";
 import ChatMessages from "../components/ChatMessages";
 import CustomTextInput from "../components/CustomTextInput";
-import data from "../../assets/data/data.json";
-import Data from "../../assets/interface/interface";
+import { DataContext } from "../../DataContext";
 
 export default function ChatScreen() {
-  // console.log(data.from);
-  return (
+  const context = useContext(DataContext);
+
+  if (!context) {
+    return <Text>Error: Data context is missing!</Text>;
+  }
+
+  const data = context.data;
+
+  return data == null ? (
+    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <Text
+        style={{
+          fontSize: 24,
+          fontWeight: "bold",
+        }}
+      >
+        Loading...
+      </Text>
+    </View>
+  ) : (
     <View style={styles.container}>
       {/* Header */}
       <Header dataHead={data} />

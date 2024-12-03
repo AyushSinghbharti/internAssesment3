@@ -1,9 +1,12 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
 import Data, { Chat } from "../../assets/interface/interface";
+import { DataContext } from "../../DataContext";
 
 function RenderChat({ chats }: { chats: Chat }) {
-  const userId = "67eab7475e5e4dd0903e133705213b43";
+  const context = useContext(DataContext);
+  const userId = context?.userId;
+
   return (
     <>
       {userId === chats.sender.user_id ? (
