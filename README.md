@@ -17,6 +17,7 @@ This project is an assignment for my internship, where the goal is to create a *
 This is screen recording of the app
 
 https://github.com/user-attachments/assets/b6e28d81-3d2f-41c1-8783-d5a7ec2a299a
+
 ---
 
 ## Tech Stack  
