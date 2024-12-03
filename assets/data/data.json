@@ -1,0 +1,119 @@
+{
+  "chats": [
+    {
+      "id": "8ad87f52511f4473b7875ad3c0a56954",
+      "message": "Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Aenean ullamcorper orci et vulputate fermentum.Aenean ullamcorper orci et vulputate fermentum.\u003Cbr\u003EPage 0\u003Cbr\u003EEtiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/648/160/160.jpg?hmac=AqrvRqv79fFWHWjjjm_Cn7QPPJ2JVox_CLRgzISsO4o",
+        "is_kyc_verified": false,
+        "self": false,
+        "user_id": "a6c04ceed74b447280f5fa7ab053adcc"
+      },
+      "time": "2024-12-03 18:33:09"
+    },
+    {
+      "id": "c11d4746dd314fd19056bba6cfaf4cb7",
+      "message": "Integer ultricies malesuada quam.\u003Cbr\u003EPage 0\u003Cbr\u003EQuisque vitae varius ex, eu volutpat orci.Quisque vitae varius ex, eu volutpat orci.Cras vel elit sed mi placerat pharetra eget vel odio.Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/551/160/160.jpg?hmac=DKAZaW3KPwMLhYwnJ-s_NOYKngMXo-nR1pEQzcNCgr0",
+        "is_kyc_verified": true,
+        "self": false,
+        "user_id": "73785ed67d034f6290b0334c6e756433"
+      },
+      "time": "2024-12-03 18:33:39"
+    },
+    {
+      "id": "12fe8cadf6b54018b5bad88824f4aec3",
+      "message": "Duis ac nulla varius diam ultrices rutrum.Quisque vitae varius ex, eu volutpat orci.Quisque vitae varius ex, eu volutpat orci.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/1072/160/160.jpg?hmac=IDpbpA5neYzFjtkdFmBDKXwgr-907ewXLa9lLk9JuA8",
+        "is_kyc_verified": true,
+        "self": true,
+        "user_id": "67eab7475e5e4dd0903e133705213b43"
+      },
+      "time": "2024-12-03 18:34:09"
+    },
+    {
+      "id": "12eaf618d54a4d3d879a9b87138273af",
+      "message": "Cras erat dui, finibus vel lectus ac, pharetra dictum odio.Integer ultricies malesuada quam.Integer ultricies malesuada quam.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.Nullam tempus scelerisque purus, sed mattis elit condimentum nec.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/648/160/160.jpg?hmac=AqrvRqv79fFWHWjjjm_Cn7QPPJ2JVox_CLRgzISsO4o",
+        "is_kyc_verified": false,
+        "self": false,
+        "user_id": "a6c04ceed74b447280f5fa7ab053adcc"
+      },
+      "time": "2024-12-03 18:34:39"
+    },
+    {
+      "id": "ca3461b7dd2f4ae594d8214b82c69a35",
+      "message": "Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.\u003Cbr\u003EPage 0\u003Cbr\u003ECras erat dui, finibus vel lectus ac, pharetra dictum odio.Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.Cras vel elit sed mi placerat pharetra eget vel odio.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/1072/160/160.jpg?hmac=IDpbpA5neYzFjtkdFmBDKXwgr-907ewXLa9lLk9JuA8",
+        "is_kyc_verified": true,
+        "self": true,
+        "user_id": "67eab7475e5e4dd0903e133705213b43"
+      },
+      "time": "2024-12-03 18:35:09"
+    },
+    {
+      "id": "d6c9407304984ec29e596ce2051abc33",
+      "message": "Cras erat dui, finibus vel lectus ac, pharetra dictum odio.Nullam tempus scelerisque purus, sed mattis elit condimentum nec.\u003Cbr\u003EPage 0\u003Cbr\u003ECras erat dui, finibus vel lectus ac, pharetra dictum odio.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/551/160/160.jpg?hmac=DKAZaW3KPwMLhYwnJ-s_NOYKngMXo-nR1pEQzcNCgr0",
+        "is_kyc_verified": true,
+        "self": false,
+        "user_id": "73785ed67d034f6290b0334c6e756433"
+      },
+      "time": "2024-12-03 18:35:39"
+    },
+    {
+      "id": "22d95159eacc47edb164fd9984529bbd",
+      "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam tempus scelerisque purus, sed mattis elit condimentum nec.Nullam tempus scelerisque purus, sed mattis elit condimentum nec.Cras vel elit sed mi placerat pharetra eget vel odio.\u003Cbr\u003EPage 0\u003Cbr\u003E",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/1072/160/160.jpg?hmac=IDpbpA5neYzFjtkdFmBDKXwgr-907ewXLa9lLk9JuA8",
+        "is_kyc_verified": true,
+        "self": true,
+        "user_id": "67eab7475e5e4dd0903e133705213b43"
+      },
+      "time": "2024-12-03 18:36:09"
+    },
+    {
+      "id": "c4b46809bd374129afdeff80a75c4946",
+      "message": "Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.Cras erat dui, finibus vel lectus ac, pharetra dictum odio.Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/551/160/160.jpg?hmac=DKAZaW3KPwMLhYwnJ-s_NOYKngMXo-nR1pEQzcNCgr0",
+        "is_kyc_verified": true,
+        "self": false,
+        "user_id": "73785ed67d034f6290b0334c6e756433"
+      },
+      "time": "2024-12-03 18:36:39"
+    },
+    {
+      "id": "b29b7c5c36fe4072acf1a75278363106",
+      "message": "Quisque vitae varius ex, eu volutpat orci.Integer ultricies malesuada quam.Duis ac nulla varius diam ultrices rutrum.Quisque vitae varius ex, eu volutpat orci.\u003Cbr\u003EPage 0\u003Cbr\u003ELorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/648/160/160.jpg?hmac=AqrvRqv79fFWHWjjjm_Cn7QPPJ2JVox_CLRgzISsO4o",
+        "is_kyc_verified": false,
+        "self": false,
+        "user_id": "a6c04ceed74b447280f5fa7ab053adcc"
+      },
+      "time": "2024-12-03 18:37:09"
+    },
+    {
+      "id": "10825347da2643a3b273d92196ebe845",
+      "message": "Quisque vitae varius ex, eu volutpat orci.Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.Proin ipsum purus, laoreet quis dictum a, laoreet sed ligula.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Etiam risus sapien, auctor eu volutpat sit amet, porta in nunc.",
+      "sender": {
+        "image": "https://fastly.picsum.photos/id/551/160/160.jpg?hmac=DKAZaW3KPwMLhYwnJ-s_NOYKngMXo-nR1pEQzcNCgr0",
+        "is_kyc_verified": true,
+        "self": false,
+        "user_id": "73785ed67d034f6290b0334c6e756433"
+      },
+      "time": "2024-12-03 18:37:39"
+    }
+  ],
+  "from": "Domlur",
+  "message": "Chat retrieved successfully",
+  "name": "Trip No. 37",
+  "status": "success",
+  "to": "Indiranagar"
+}

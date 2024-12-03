@@ -11,8 +11,9 @@ import {
   Modal,
 } from "react-native";
 import { Feather, Ionicons, Octicons } from "@expo/vector-icons";
+import Data from "../../assets/interface/interface";
 
-export default function Header() {
+export default function Header({ dataHead }: { dataHead: Data }) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -36,7 +37,7 @@ export default function Header() {
               <Text style={styles.tabText}>Members</Text>
             </View>
             <View style={styles.tabOptions}>
-            <Feather name="phone" size={24} color="black" />
+              <Feather name="phone" size={24} color="black" />
               <Text style={styles.tabText}>Share Number</Text>
             </View>
             <View style={styles.tabOptions}>
@@ -51,38 +52,35 @@ export default function Header() {
         <TouchableOpacity>
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
-        <Text style={styles.tripTitle}>Trip 1</Text>
+        <Text style={styles.tripTitle}>{dataHead.name}</Text>
         <Feather name="edit" size={24} color="black" />
       </View>
 
       <View style={styles.tripDetails}>
         <View style={styles.profilePicWrapper}>
-          <Image
-            style={styles.profilePic}
-            source={{ uri: "https://picsum.photos/id/237/250" }}
-          />
-          <Image
-            style={styles.profilePic}
-            source={{ uri: "https://picsum.photos/id/237/250" }}
-          />
-          <Image
-            style={styles.profilePic}
-            source={{ uri: "https://picsum.photos/id/237/250" }}
-          />
-          <Image
-            style={styles.profilePic}
-            source={{ uri: "https://picsum.photos/id/237/250" }}
-          />
+          {(() => {
+            const uniqueDps = [
+              ...new Set(dataHead.chats.map((chat) => chat.sender.image)),
+            ];
+
+            while (uniqueDps.length < 4) {
+              uniqueDps.push(uniqueDps[uniqueDps.length - 1]);
+            }
+
+            return uniqueDps
+              .map((uri, index) => (
+                <Image key={index} style={styles.profilePic} source={{ uri }} />
+              ));
+          })()}
         </View>
 
         <Text style={styles.tripSubtitle}>
           <Text style={styles.locationDetail}>
-            From{" "}
-            <Text style={styles.locationHeading}>IGI Airport, sector T3</Text>
+            From <Text style={styles.locationHeading}>{dataHead.from}</Text>
             {"\n"}
           </Text>
           <Text style={styles.locationDetail}>
-            To <Text style={styles.locationHeading}>sector 28</Text>
+            To <Text style={styles.locationHeading}>{dataHead.to}</Text>
           </Text>
         </Text>
         <TouchableOpacity>
@@ -161,16 +159,16 @@ const styles = StyleSheet.create({
     marginTop: 25,
     marginHorizontal: 10,
     borderRadius: 8,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     elevation: 2,
-    position: 'absolute',
+    position: "absolute",
     top: 120,
     right: 10,
   },
   tabOptions: {
     gap: 10,
     height: 44,
-    alignItems: 'center',
+    alignItems: "center",
     flexDirection: "row",
     paddingVertical: 7,
     paddingHorizontal: 12,
@@ -179,6 +177,6 @@ const styles = StyleSheet.create({
   },
   tabText: {
     fontSize: 14,
-    fontWeight: '600',
+    fontWeight: "600",
   },
 });

@@ -27,7 +27,7 @@ export default function CustomTextInput() {
     if (myRef.current) {
       myRef.current.measure((x:number, y:number, width:number, height:number, pageX:number, pageY:number) => {
         setPosition({ x: pageX, y: y });
-        console.log("Measured:", { x, y, pageX, pageY });
+        // console.log("Measured:", { x, y, pageX, pageY });
       });
     }
   }, [modalVisible]);

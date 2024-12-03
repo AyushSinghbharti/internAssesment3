@@ -11,12 +11,15 @@ import { Ionicons } from "@expo/vector-icons";
 import Header from "../components/TopView";
 import ChatMessages from "../components/ChatMessages";
 import CustomTextInput from "../components/CustomTextInput";
+import data from "../../assets/data/data.json";
+import Data from "../../assets/interface/interface";
 
 export default function ChatScreen() {
+  // console.log(data.from);
   return (
     <View style={styles.container}>
       {/* Header */}
-      <Header />
+      <Header dataHead={data} />
 
       {/* Message Section */}
       <ChatMessages />
