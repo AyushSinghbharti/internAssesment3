@@ -1,45 +1,63 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { View, Text, StyleSheet, ScrollView, Image } from "react-native";
+import Data, { Chat } from "../../assets/interface/interface";
 
-export default function ChatMessages() {
+function RenderChat({ chats }: { chats: Chat }) {
+  const userId = "67eab7475e5e4dd0903e133705213b43";
   return (
-    <View style={{ flex: 1 }}>
+    <>
+      {userId === chats.sender.user_id ? (
+        // Sent Messages
+        <View style={styles.sentMessage}>
+          <Text style={styles.messageTextRec}>{chats.message}</Text>
+        </View>
+      ) : (
+        // Received Message
+        <View style={{ flexDirection: "row", gap: 8 }}>
+          <View style={styles.picView}>
+            <Image
+              style={styles.profilePic}
+              source={{ uri: chats.sender.image }}
+            />
+            {chats.sender.is_kyc_verified ? (
+              <Image
+                style={styles.verificationSign}
+                source={require("../../assets/verificationPic.png")}
+              />
+            ) : null}
+          </View>
+          <View style={styles.receivedMessage}>
+            <Text style={styles.messageTextSent}>{chats.message}</Text>
+          </View>
+        </View>
+      )}
+    </>
+  );
+}
+
+export default function ChatMessages({ chats }: { chats: Data }) {
+  const scrollViewRef = useRef<ScrollView>(null);
+
+  useEffect(() => {
+    scrollViewRef.current?.scrollToEnd({ animated: false });
+  }, []);
+
+  return (
+    <View style={[styles.messagesContainer, { flex: 1 }]}>
       <ScrollView
+        ref={scrollViewRef}
         style={styles.messagesContainer}
         contentContainerStyle={styles.messagesContent}
+        onContentSizeChange={() => scrollViewRef.current?.scrollToEnd({ animated: true })}
       >
-        {/* Time */}
         <View style={styles.timeBox}>
           <View style={styles.timeLine} />
           <Text style={styles.time}>12 Jan, 2024</Text>
           <View style={styles.timeLine} />
         </View>
-
-        {/* Received Message */}
-        <View style={{ flexDirection: "row", gap: 8 }}>
-          <View style={styles.picView}>
-            <Image
-              style={styles.profilePic}
-              source={{ uri: "https://picsum.photos/id/237/250" }}
-            />
-            <Image
-              style={styles.verificationSign}
-              source={require("../../assets/verificationPic.png")}
-            />
-          </View>
-          <View style={styles.receivedMessage}>
-            <Text style={styles.messageTextSent}>
-              Connect with fellow travelers, share the ride and save money.
-            </Text>
-          </View>
-        </View>
-
-        {/* Sent Message */}
-        <View style={styles.sentMessage}>
-          <Text style={styles.messageTextRec}>
-            Connect with fellow travelers, share the ride and save money.
-          </Text>
-        </View>
+        {chats.chats.map((chat, index) => (
+          <RenderChat key={index} chats={chat} />
+        ))}
       </ScrollView>
     </View>
   );
@@ -100,7 +118,8 @@ const styles = StyleSheet.create({
     color: "#fff",
   },
   picView: {
-    height: 30, width: 30,
+    height: 30,
+    width: 30,
   },
   profilePic: {
     height: 30,
@@ -110,7 +129,7 @@ const styles = StyleSheet.create({
   verificationSign: {
     height: 12,
     width: 12,
-    position: 'absolute',
+    position: "absolute",
     bottom: 0,
     right: 0,
   },

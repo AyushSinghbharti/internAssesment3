@@ -19,7 +19,7 @@ export default function Header({ dataHead }: { dataHead: Data }) {
   return (
     <View style={styles.header}>
       <Modal
-        animationType="slide"
+        animationType="fade"
         statusBarTranslucent={true}
         transparent={true}
         visible={modalVisible}
@@ -28,7 +28,7 @@ export default function Header({ dataHead }: { dataHead: Data }) {
         }}
       >
         <TouchableOpacity
-          style={{ flex: 1 }}
+          style={{ flex: 1, overflow: 'visible' }}
           onPress={() => setModalVisible(!modalVisible)}
         >
           <View style={styles.tabBox}>
@@ -99,11 +99,10 @@ export default function Header({ dataHead }: { dataHead: Data }) {
 
 const styles = StyleSheet.create({
   header: {
-    // alignItems: "center",
-    justifyContent: "space-between",
     marginTop: StatusBar.currentHeight,
     paddingTop: 20,
     padding: 16,
+    height: 130,
     backgroundColor: "#FAF9F4",
     borderBottomWidth: 1,
     borderBottomColor: "#E5E5E0",

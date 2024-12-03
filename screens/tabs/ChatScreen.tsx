@@ -22,7 +22,7 @@ export default function ChatScreen() {
       <Header dataHead={data} />
 
       {/* Message Section */}
-      <ChatMessages />
+      <ChatMessages chats={data} />
 
       {/* Input Section */}
       <CustomTextInput />
