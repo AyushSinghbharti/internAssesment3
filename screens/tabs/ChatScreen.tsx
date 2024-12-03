@@ -4,8 +4,7 @@ import Header from "../components/TopView";
 import ChatMessages from "../components/ChatMessages";
 import CustomTextInput from "../components/CustomTextInput";
 import { DataContext } from "../../DataContext";
-import { MotiView } from "moti";
-import { Skeleton } from "moti/skeleton";
+import LoaderComponet from "../components/LoaderComponent";
 
 export default function ChatScreen() {
   const context = useContext(DataContext);
@@ -16,28 +15,12 @@ export default function ChatScreen() {
     return <Text>Error: Data context is missing!</Text>;
   }
 
-  const data = context.data;
+  const data = null;
 
   const Spacer = ({ height = 16 }) => <View style={{ height }} />;
 
   return data == null ? (
-    <Pressable onPress={toggle} style={styles.container}>
-      <MotiView
-        transition={{
-          type: "timing",
-        }}
-        style={[styles.container, styles.padded]}
-        animate={{ backgroundColor: dark ? "#000000" : "#ffffff" }}
-      >
-        <Skeleton colorMode={colorMode} radius="round" height={75} width={75} />
-        <Spacer />
-        <Skeleton colorMode={colorMode} width={250} />
-        <Spacer height={8} />
-        <Skeleton colorMode={colorMode} width={"100%"} />
-        <Spacer height={8} />
-        <Skeleton colorMode={colorMode} width={"100%"} />
-      </MotiView>
-    </Pressable>
+    <LoaderComponet />
   ) : (
     <View style={styles.container}>
       {/* Header */}
