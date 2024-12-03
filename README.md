@@ -15,12 +15,8 @@ This project is an assignment for my internship, where the goal is to create a *
 
 ## Look of Project  
 This is screen recording of the app
+
 https://github.com/user-attachments/assets/b6e28d81-3d2f-41c1-8783-d5a7ec2a299a
-
-<div align="center">  
-  <img src="https://github.com/user-attachments/assets/25ee4edb-d4e6-49a8-a8cd-752eaa3734b4" alt="WhatsApp Image 2024-12-04" width="100">  
-</div>  
-
 ---
 
 ## Tech Stack  
