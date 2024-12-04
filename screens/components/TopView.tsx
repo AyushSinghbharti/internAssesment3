@@ -16,36 +16,6 @@ export default function Header({ dataHead }: { dataHead: Data }) {
 
   return (
     <View style={styles.header}>
-      <Modal
-        animationType="fade"
-        statusBarTranslucent={true}
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <TouchableOpacity
-          style={{ flex: 1, overflow: 'visible' }}
-          onPress={() => setModalVisible(!modalVisible)}
-        >
-          <View style={styles.tabBox}>
-            <View style={styles.tabOptions}>
-              <Octicons name="people" size={20} color="black" />
-              <Text style={styles.tabText}>Members</Text>
-            </View>
-            <View style={styles.tabOptions}>
-              <Feather name="phone" size={24} color="black" />
-              <Text style={styles.tabText}>Share Number</Text>
-            </View>
-            <View style={styles.tabOptions}>
-              <Octicons name="report" size={20} color="black" />
-              <Text style={styles.tabText}>Report</Text>
-            </View>
-          </View>
-        </TouchableOpacity>
-      </Modal>
-
       <View style={styles.headerTop}>
         <TouchableOpacity>
           <Ionicons name="arrow-back" size={24} color="black" />
@@ -65,10 +35,9 @@ export default function Header({ dataHead }: { dataHead: Data }) {
               uniqueDps.push(uniqueDps[uniqueDps.length - 1]);
             }
 
-            return uniqueDps
-              .map((uri, index) => (
-                <Image key={index} style={styles.profilePic} source={{ uri }} />
-              ));
+            return uniqueDps.map((uri, index) => (
+              <Image key={index} style={styles.profilePic} source={{ uri }} />
+            ));
           })()}
         </View>
 
@@ -81,16 +50,36 @@ export default function Header({ dataHead }: { dataHead: Data }) {
             To <Text style={styles.locationHeading}>{dataHead.to}</Text>
           </Text>
         </Text>
-        <TouchableOpacity>
-          <Ionicons
-            name="ellipsis-vertical"
-            size={24}
-            color="black"
-            onPress={() => setModalVisible(!modalVisible)}
-          />
-        </TouchableOpacity>
+        <View>
+          <TouchableOpacity>
+            <Ionicons
+              name="ellipsis-vertical"
+              size={24}
+              color="black"
+              onPress={() => setModalVisible(!modalVisible)}
+            />
+          </TouchableOpacity>
+
+          {modalVisible && (
+            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+              <View style={styles.tabBox}>
+                <View style={styles.tabOptions}>
+                  <Octicons name="people" size={20} color="black" />
+                  <Text style={styles.tabText}>Members</Text>
+                </View>
+                <View style={styles.tabOptions}>
+                  <Feather name="phone" size={24} color="black" />
+                  <Text style={styles.tabText}>Share Number</Text>
+                </View>
+                <View style={styles.tabOptions}>
+                  <Octicons name="report" size={20} color="black" />
+                  <Text style={styles.tabText}>Report</Text>
+                </View>
+              </View>
+            </TouchableOpacity>
+          )}
+        </View>
       </View>
-      <TouchableOpacity></TouchableOpacity>
     </View>
   );
 }
@@ -115,7 +104,6 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 24,
     fontFamily: "Mulish-ExtraBold",
-    // fontWeight: "800",
     color: "#333",
   },
   tripDetails: {
@@ -154,13 +142,11 @@ const styles = StyleSheet.create({
   },
   tabBox: {
     width: 153,
-    marginTop: 25,
-    marginHorizontal: 10,
     borderRadius: 8,
     backgroundColor: "white",
     elevation: 2,
     position: "absolute",
-    top: 120,
+    top: 20,
     right: 10,
   },
   tabOptions: {

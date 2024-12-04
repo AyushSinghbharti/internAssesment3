@@ -25,6 +25,7 @@ export default function ChatScreen() {
         from={{ translateY: -50, opacity: 0 }}
         animate={{ translateY: 0, opacity: 1 }}
         transition={{ type: "timing", duration: 700 }}
+        style={{zIndex: 1}}
       >
         <Header dataHead={data} />
       </MotiView>
