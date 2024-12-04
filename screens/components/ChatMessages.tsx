@@ -1,11 +1,5 @@
 import React, { useRef, useEffect, useContext } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  FlatList,
-} from "react-native";
+import { View, Text, StyleSheet, Image, FlatList } from "react-native";
 import Data, { Chat } from "../../assets/interface/interface";
 import { DataContext } from "../../DataContext";
 import { MotiView } from "moti";
@@ -121,6 +115,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 4,
     },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
     borderRadius: 8,
     borderTopStartRadius: 0,
     padding: 12,
@@ -135,6 +131,14 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 8,
     maxWidth: "75%",
+    elevation: 1,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
   },
   messageTextSent: {
     color: "#606060",

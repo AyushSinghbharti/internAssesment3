@@ -148,6 +148,13 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 20,
     right: 10,
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.12,
+    shadowRadius: 10,
   },
   tabOptions: {
     gap: 10,
@@ -162,6 +169,5 @@ const styles = StyleSheet.create({
   tabText: {
     fontSize: 14,
     fontFamily: "Mulish-SemiBold",
-    fontWeight: "600",
   },
 });

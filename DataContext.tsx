@@ -25,7 +25,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         console.error('Error fetching data:', error);
         alert(error);
       }
-
     };
 
     fetchData();
