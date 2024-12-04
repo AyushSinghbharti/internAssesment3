@@ -17,7 +17,7 @@ const Layout = () => {
         }}
       >
         <Stack.Screen
-          name="Homepage"
+          name="index"
           options={{
             title: "index",
           }}

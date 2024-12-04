@@ -38,6 +38,20 @@
     "updates": {
       "url": "https://u.expo.dev/326d511b-2ba1-42d8-ab47-220c23655519"
     },
-    "plugins": ["expo-router"]
+    "plugins": [
+      "expo-router",
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Mulish/Mulish-Bold.ttf",
+            "./assets/fonts/Mulish/Mulish-SemiBold.ttf",
+            "./assets/fonts/Mulish/Mulish-ExtraBold.ttf",
+            "./assets/fonts/Mulish/Mulish-ExtraLight.ttf",
+            "./assets/fonts/Mulish/Mulish-Regular.ttf"
+          ]
+        }
+      ]
+    ]
   }
 }

@@ -2,14 +2,18 @@ import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, FlatList, StyleSheet, Image, Pressable } from "react-native";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
-import { DataContext } from "../../DataContext";
+
+type Trip = {
+  id: string;
+  from: string;
+  to: string;
+  date: string;
+};
 
 const HomePage = () => {
   const router = useRouter();
-  const tempContext = useContext(DataContext);
-  console.log("tempContext", tempContext);
 
-  const trips = [
+  const trips: Trip[] = [
     {
       id: "1",
       from: "IGI Airport, T3",
@@ -22,10 +26,22 @@ const HomePage = () => {
       to: "Connaught Place",
       date: "14th Jan, 2024",
     },
+    {
+      id: "3",
+      from: "Agra Form",
+      to: "Lucknow Junction",
+      date: "14th Jan, 2024",
+    },
+    {
+      id: "4",
+      from: "Bihar Basti",
+      to: "Hydrabad Resturant",
+      date: "15th Jan, 2024",
+    },
   ];
 
-  const renderTrip = ({ item }: {}) => (
-    <Pressable style={styles.tripCard} onPress={()=> router.push("/tabs/ChatScreen")}>
+  const renderTrip = ({ item }: { item: Trip }) => (
+    <Pressable style={styles.tripCard} onPress={() => router.push("/tabs/ChatScreen")}>
       <View style={styles.tripInfo}>
         <Text style={styles.tripTitle}>{item.from}</Text>
         <Ionicons name="arrow-forward" size={20} color="#555" />
@@ -37,7 +53,6 @@ const HomePage = () => {
 
   return (
     <View style={styles.container}>
-      {/* Header */}
       <View style={styles.header}>
         <Image
           source={{ uri: "https://via.placeholder.com/40" }} // Replace with profile image URL
@@ -53,8 +68,8 @@ const HomePage = () => {
       <Text style={styles.sectionTitle}>Upcoming Trips</Text>
       <FlatList
         data={trips}
-        renderItem={renderTrip}
         keyExtractor={(item) => item.id}
+        renderItem={renderTrip}
         style={styles.tripList}
       />
 
@@ -87,7 +102,7 @@ const styles = StyleSheet.create({
   },
   appTitle: {
     fontSize: 18,
-    fontWeight: "bold",
+    fontFamily: "Mulish-ExtraBold",
     flex: 1,
     textAlign: "center",
   },
