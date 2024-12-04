@@ -7,17 +7,20 @@ import {
   StatusBar,
   Image,
   Modal,
+  Pressable,
 } from "react-native";
 import { Feather, Ionicons, Octicons } from "@expo/vector-icons";
 import Data from "../../assets/interface/interface";
+import { useRouter } from "expo-router";
 
 export default function Header({ dataHead }: { dataHead: Data }) {
   const [modalVisible, setModalVisible] = useState(false);
+  const router = useRouter();
 
   return (
     <View style={styles.header}>
       <View style={styles.headerTop}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
         <Text style={styles.tripTitle}>{dataHead.name}</Text>
@@ -61,7 +64,7 @@ export default function Header({ dataHead }: { dataHead: Data }) {
           </TouchableOpacity>
 
           {modalVisible && (
-            <TouchableOpacity onPress={() => setModalVisible(!modalVisible)}>
+            <Pressable onPress={() => setModalVisible(!modalVisible)}>
               <View style={styles.tabBox}>
                 <View style={styles.tabOptions}>
                   <Octicons name="people" size={20} color="black" />
@@ -76,7 +79,7 @@ export default function Header({ dataHead }: { dataHead: Data }) {
                   <Text style={styles.tabText}>Report</Text>
                 </View>
               </View>
-            </TouchableOpacity>
+            </Pressable>
           )}
         </View>
       </View>

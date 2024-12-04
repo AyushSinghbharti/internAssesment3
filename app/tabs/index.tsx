@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { View, Text, TouchableOpacity, FlatList, StyleSheet, Image, Pressable } from "react-native";
-import { MaterialIcons, Ionicons } from "@expo/vector-icons";
+import { MaterialIcons, Ionicons, Feather } from "@expo/vector-icons";
 import { useRouter } from "expo-router";
 
 type Trip = {
@@ -54,10 +54,7 @@ const HomePage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Image
-          source={{ uri: "https://via.placeholder.com/40" }} // Replace with profile image URL
-          style={styles.profileImage}
-        />
+        <Feather name="user" size={25} style={styles.profileImage} />
         <Text style={styles.appTitle}>My Rides</Text>
         <TouchableOpacity>
           <MaterialIcons name="notifications" size={24} color="black" />
@@ -85,7 +82,7 @@ const HomePage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#FAF9F4",
   },
   header: {
     padding: 16,
@@ -93,11 +90,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
+    borderBottomColor: "#E5E5E0",
   },
   profileImage: {
-    width: 40,
-    height: 40,
+    borderWidth: 1,
     borderRadius: 20,
   },
   appTitle: {
@@ -109,7 +105,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     padding: 16,
     fontSize: 16,
-    fontWeight: "bold",
+    fontFamily: "Mulish-Bold",
     color: "#333",
   },
   tripList: {
@@ -118,7 +114,14 @@ const styles = StyleSheet.create({
   },
   tripCard: {
     padding: 16,
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "white",
+    elevation: 2,
+    shadowRadius: 7,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.2,
     marginVertical: 8,
     borderRadius: 8,
     borderColor: "#ddd",
@@ -128,15 +131,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 4,
+    gap: 5,
   },
   tripTitle: {
     fontSize: 14,
-    fontWeight: "600",
+    fontFamily: "Mulish-Bold",
     color: "#333",
-    marginHorizontal: 8,
   },
   tripDate: {
     fontSize: 12,
+    fontFamily: "Mulish-Regular",
     color: "#777",
   },
   newTripButton: {
@@ -151,6 +155,7 @@ const styles = StyleSheet.create({
   newTripText: {
     fontSize: 16,
     color: "#fff",
+    fontFamily: "Mulish-ExtraLight",
     marginLeft: 8,
   },
 });
