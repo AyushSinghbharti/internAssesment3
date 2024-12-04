@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import Data from './assets/interface/interface';
-import datas from './assets/data/data.json';
 
 interface DataContextType {
   data: Data | null;
@@ -27,7 +26,6 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
         alert(error);
       }
 
-      setData(datas);
     };
 
     fetchData();
