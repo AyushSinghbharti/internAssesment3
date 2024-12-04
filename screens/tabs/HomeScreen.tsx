@@ -6,7 +6,6 @@ const HomeScreen = () => {
   return (
     <View>
       <Text>Recent Chats</Text>
-
     </View>
   )
 }

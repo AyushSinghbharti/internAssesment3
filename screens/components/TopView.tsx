@@ -88,8 +88,8 @@ const styles = StyleSheet.create({
   header: {
     marginTop: StatusBar.currentHeight,
     paddingTop: 20,
-    padding: 16,
-    height: 130,
+    paddingBottom: 16,
+    paddingHorizontal: 16,
     backgroundColor: "#FAF9F4",
     borderBottomWidth: 1,
     borderBottomColor: "#E5E5E0",

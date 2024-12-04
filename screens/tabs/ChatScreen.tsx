@@ -50,15 +50,4 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FAF9F4",
   },
-  shape: {
-    justifyContent: "center",
-    height: 250,
-    width: 250,
-    borderRadius: 25,
-    marginRight: 10,
-    backgroundColor: "white",
-  },
-  padded: {
-    padding: 16,
-  },
 });
