@@ -1,31 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  useState,
+} from "react";
 import {
   View,
   Text,
   StyleSheet,
   TextInput,
-  TouchableOpacity,
-  Modal,
 } from "react-native";
-import {
-  Feather,
-  Ionicons,
-} from "@expo/vector-icons";
+import { Feather, Ionicons } from "@expo/vector-icons";
 import FileSelector from "../modalComponents/FileSelector";
 
 export default function CustomTextInput() {
   const [modalVisible, setModalVisible] = useState(false);
-  const [postion, setPosition] = useState({ x: 100, y: 200 });
-  const myRef = useRef(null);
-
-  useEffect(() => {
-    if (myRef.current) {
-      myRef.current.measure((x:number, y:number, width:number, height:number, pageX:number, pageY:number) => {
-        setPosition({ x: pageX, y: y });
-        // console.log("Measured:", { x, y, pageX, pageY });
-      });
-    }
-  }, [modalVisible]);
 
   const handleBubbleIcon = () => {
     console.log("Icon Pressed");
@@ -34,38 +20,19 @@ export default function CustomTextInput() {
 
   return (
     <View style={styles.inputContainer}>
-      <Modal
-        animationType="fade"
-        statusBarTranslucent={true}
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <TouchableOpacity
-          style={{ flex: 1 }}
-          onPress={() => setModalVisible(!modalVisible)}
-        >
-          <View
-            style={{
-              position: "absolute",
-              bottom: 360 % (360 - postion.x),
-              right: postion.y,
-            }}
-          >
-            <FileSelector />
-          </View>
-        </TouchableOpacity>
-      </Modal>
-
       <View style={styles.input}>
         <TextInput
           style={{ flex: 1, fontFamily: "Mulish-Regular" }}
           placeholder="Reply to @Rohit Yadav"
           placeholderTextColor="#aaa"
         />
-        <View ref={myRef}>
+
+        <View style={{ position: "relative" }}>
+          <View style={{ position: "relative" }}>
+            {modalVisible && (
+              <FileSelector />
+            )}
+          </View>
           <Feather
             name="paperclip"
             size={28}

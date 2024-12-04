@@ -1,17 +1,31 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Feather, Ionicons } from "@expo/vector-icons";
+import { MotiView } from "moti";
 export default function FileSelector() {
   return (
     <>
-      <View style={{ alignItems: "center" }}>
+      <MotiView
+        from={{ translateY: 10, opacity: 0 }}
+        animate={{ translateY: 0, opacity: 1 }}
+        transition={{ type: "timing", duration: 500 }}
+        style={{
+          position: "absolute",
+          zIndex: 1,
+          top: -70,
+          left: -65,
+          alignItems: "center",
+          justifyContent: "center",
+          width: 150,
+        }}
+      >
         <View style={styles.bubble}>
           <Feather name="camera" size={24} color="white" />
           <Feather name="video" size={24} color="white" />
           <Ionicons name="document-outline" size={24} color="white" />
         </View>
         <View style={styles.arrow} />
-      </View>
+      </MotiView>
     </>
   );
 }
@@ -39,5 +53,6 @@ const styles = StyleSheet.create({
     borderTopColor: "#008000",
     position: "absolute",
     bottom: -9,
+    right: 60,
   },
 });

@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 24,
     fontFamily: "Mulish-ExtraBold",
+    // fontWeight: "800",
     color: "#333",
   },
   tripDetails: {
