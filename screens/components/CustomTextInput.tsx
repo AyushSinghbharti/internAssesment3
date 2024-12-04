@@ -14,7 +14,6 @@ export default function CustomTextInput() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleBubbleIcon = () => {
-    console.log("Icon Pressed");
     setModalVisible(!modalVisible);
   };
 
