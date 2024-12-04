@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "internapp3",
     "name": "internApp3",
     "slug": "internApp3",
     "version": "1.0.0",
@@ -23,7 +24,8 @@
       "package": "com.ayushsingh.internApp3"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
     "extra": {
       "eas": {
@@ -35,6 +37,7 @@
     },
     "updates": {
       "url": "https://u.expo.dev/326d511b-2ba1-42d8-ab47-220c23655519"
-    }
+    },
+    "plugins": ["expo-router"]
   }
 }
