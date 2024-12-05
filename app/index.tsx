@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
-import HomePage from "./tabs/index";
 import { DataProvider } from "../DataContext";
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
+import { Redirect } from 'expo-router';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -28,7 +28,8 @@ export default function App() {
 
   return (
     <DataProvider>
-      <HomePage />
+      {/* <HomePage /> */}
+      <Redirect href={"./tabs"} />
     </DataProvider>
   );
 }
