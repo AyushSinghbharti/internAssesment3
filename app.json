@@ -51,8 +51,7 @@
             "./assets/fonts/Mulish/Mulish-Regular.ttf"
           ]
         }
-      ],
-      "react-native-reanimated/plugin"
+      ]
     ]
   }
 }
