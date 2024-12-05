@@ -23,7 +23,7 @@ function RenderChat({ chats, index }: { chats: Chat | null; index: number }) {
         <MotiView
           from={{ translateY: 50, opacity: 0 }}
           animate={{ translateY: 0, opacity: 1 }}
-          transition={{ type: "timing", duration: index * 250 }}
+          transition={{ type: "timing", duration: (index < 10 ? index * 250 : 0) }}
           style={styles.sentMessage}
         >
           <Text style={styles.messageTextRec}>{chats.message}</Text>
@@ -32,7 +32,7 @@ function RenderChat({ chats, index }: { chats: Chat | null; index: number }) {
         <MotiView
           from={{ translateY: 50, opacity: 0 }}
           animate={{ translateY: 0, opacity: 1 }}
-          transition={{ type: "timing", duration: index * 250 }}
+          transition={{ type: "timing", duration: (index < 10 ? index * 300 : 0) }}
           style={{ flexDirection: "row", gap: 8 }}
         >
           <View style={styles.picView}>
@@ -67,6 +67,7 @@ function RenderDate({ date }: { date: string }) {
 }
 
 export default function ChatMessages({ chats }: { chats: Data }) {
+
   return (
     <View style={[styles.messagesContainer, { flex: 1 }]}>
       <FlatList

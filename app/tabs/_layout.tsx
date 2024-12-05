@@ -20,7 +20,7 @@ const Layout = () => {
           name="index"
           options={{
             title: "index",
-            headerShown: false
+            headerShown: false,
           }}
         />
         <Stack.Screen
